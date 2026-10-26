@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continue to Website</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 380px;
+      padding: 30px 24px;
+      text-align: center;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px #0005;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+      color: #60a5fa;
+      background: #263953;
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .timer-box {
+      margin: 24px 0;
+      padding: 18px;
+      background: #0f172a;
+      border-radius: 12px;
+    }
+
+    .timer-label {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    #countdown {
+      margin-top: 8px;
+      font-size: 42px;
+      font-weight: bold;
+      color: #60a5fa;
+    }
+
+    .btn {
+      display: block;
+      padding: 16px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="icon">↗</div>
+
+    <h1>WELCOME</h1>
+
+    <p>
+      You are about to visit the destination page.
+      Please wait a moment.
+    </p>
+
+    <div class="timer-box">
+      <div class="timer-label">Continuing in</div>
+      <div id="countdown">3</div>
+    </div>
+
+    <a
+      class="btn"
+      id="continueBtn"
+      href="https://t.co/gyPpPAMn7L"
+    >
+      CONTINUE NOW ↗
+    </a>
+
+    <div class="note">
+      Click the button above if you don't want to wait.
+    </div>
+  </main>
+
+  <script>
+    const targetURL =
+      "https://t.co/gyPpPAMn7L";
+
+    let seconds = 3;
+
+    const countdown = document.getElementById("countdown");
+
+    const timer = setInterval(function () {
+      seconds--;
+      countdown.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = targetURL;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
